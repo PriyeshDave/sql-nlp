@@ -17,6 +17,7 @@ arr=["AffiliationID_Place_Affiliation.csv","AuthID_AffiliationID.csv","AuthID_Fi
      ,"PaperID_AuthID.csv","PaperID_FieldID.csv","PaperID_Summary.csv","PaperID_Title.csv"]
 maping={}
 table={}
+
 for i in range(13):
     data=pd.read_csv(arr[i])
     table[arr[i]]=data.columns
@@ -31,6 +32,7 @@ def NER(natural):
     tempo=natural
     colname_identity=[]
 #     tempo=re.sub(r'[^a-zA-Z \']+', '',tempo)
+
     while(tempo.find('\'')!=-1):
         start=tempo.find('\'')
         if(tempo.find('\'',start+1)!=-1):
